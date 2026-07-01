@@ -14,7 +14,7 @@
     "capture": "node scripts/capture.mjs"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.39.2",
+    "@astrojs/starlight": "^0.41.1",
     "astro": "^6.4.8",
     "sharp": "^0.34.5"
   },
