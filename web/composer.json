@@ -1,38 +1,53 @@
 {
     "name": "sbpp/sourcebans-pp",
     "description": "Admin, ban, and comms management system for the Source engine.",
-    "version": "1.8.1",
     "type": "project",
     "keywords": [],
     "homepage": "https://sbpp.github.io",
-    "readme": "https://github.com/sbpp/sourcebans-pp/blob/v1.x/README.md",
-    "license": ["CC BY-NC-SA 3.0", "GPL-3.0"],
+    "readme": "https://github.com/sbpp/sourcebans-pp/blob/main/README.md",
+    "license": "Elastic-2.0",
     "support": {
         "issues": "https://github.com/sbpp/sourcebans-pp/issues",
         "forum": "https://forums.alliedmods.net/forumdisplay.php?f=152",
         "wiki": "https://sbpp.github.io/faq/",
         "source": "https://github.com/sbpp/sourcebans-pp",
         "docs": "https://sbpp.github.io/docs/",
-        "chat": "https://discord.gg/4Bhj6NU"
+        "chat": "https://discord.gg/tzqYqmAtF5"
     },
     "config": {
         "vendor-dir": "includes/vendor"
     },
     "require": {
         "lcobucci/jwt": "^5.0",
+        "league/commonmark": "^2.5",
         "maxmind-db/reader": "~1.0",
         "smarty/smarty": "^v5.4",
-        "xpaw/php-source-query-class": "dev-master",
-        "adodb/adodb-php": "^5.22",
-        "symfony/mailer": "^7.2",
+        "xpaw/php-source-query-class": "^6.0.0",
+        "symfony/mailer": "^8.0",
         "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
         "ext-openssl": "*",
-        "php": ">=8.2"
+        "ext-gmp": "*",
+        "php": ">=8.5",
+        "maennchen/zipstream-php": "^3.2"
     },
-
     "autoload": {
         "psr-4": {
-            "Sbpp\\": "includes/"
+            "Sbpp\\\\": "includes/"
         }
+    },
+    "autoload-dev": {
+        "classmap": ["phpstan/"]
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpunit/phpunit": "^13",
+        "staabm/phpstan-dba": "^0.4"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "phpstan": "phpstan analyse",
+        "api-contract": "php bin/generate-api-contract.php"
     }
 }
