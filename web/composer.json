@@ -27,6 +27,7 @@
         "symfony/mailer": "^7.2",
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
+        "ext-mysqli": "*",
         "ext-openssl": "*",
         "ext-gmp": "*",
         "php": ">=8.2"
